@@ -1,0 +1,24 @@
+def mamamia(x, count):
+    if count == 0:
+        # print(x, end=" ")
+        return str(x)+" "
+    else:
+        # print(x, end=" ")
+        return str(x)+" " +mamamia(x - 7, count - 1)
+def mama(x, count=0):
+    if x > 47:
+        return str(mamamia(x - 14, count - 2))
+    else:
+        # print(x, end=" ")
+        return str(x)+" "+str(mama(x + 7, count + 1))
+# print(mama(25))
+
+def final(x, count=0):
+    if x + 7 > 47:
+        return
+    else:
+        print(count*"  "+mama(x))
+        print('\n')
+        return final(x + 7, count + 1)
+
+final(18)
